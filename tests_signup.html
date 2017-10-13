@@ -16,17 +16,24 @@
         <fieldset>
             <legend>Personal information</legend>
             Name:<br>
-            <input title="name" type="text"><br>
+            <input title="name" type="text" placeholder="Name"><br>
             Email:<br>
-            <input title="email" type="email"><br>
+            <input title="email" type="email" placeholder="Email"><br>
             Gender:<br>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-
+            <input id="radio_male" type="radio" name="gender" value="male" checked>
+            <label for="radio_male">Male</label><br>
+            <input id="radio_female" type="radio" name="gender" value="female">
+            <label for="radio_female">Female</label><br>
+            <label for="info_month">When you heard about our app?</label><br>
+            <input id="info_month" type="month"><br>
+            <label for="vote_idea">How do you rate our idea?</label><br>
+            <input id="vote_idea" type="range" min="0" max="10" step="1">
         </fieldset>
 
         <fieldset>
             <legend>Other information</legend>
+            Show us your favorite colour:<br>
+            <input type="color" value="#000000" list><br>
             Please select your operating system:<br>
             <select name="os" id="os-selection">
                 <option value="android">Android</option>
@@ -37,6 +44,10 @@
             <input type="checkbox" name="survey1" value="online"> I buy clothes online<br>
             <input type="checkbox" name="survey2" value="shops"> I buy clothes at shops<br>
             <input type="checkbox" name="survey3" value="advice"> I sometimes need advice about my look<br>
+            Do you lead any blog? Show us!<br>
+            <input type="url" placeholder="www.yourblog.yourdomain"><br>
+            Do you need more info about us? Search it!<br>
+            <input type="search" name="googlesearch" placeholder="Google search">
         </fieldset>
 
         <fieldset>

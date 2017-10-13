@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="mailto:contact@decilyapp.com" method="post" enctype="text/plain" autocomplete="on">
+    <fieldset>
+        <legend>Contact us</legend>
+        <input type="text" id="input_first_name" placeholder="First name" autofocus><br>
+        <input type="text" id="input_last_name" placeholder="Last name" required><br>
+        <input type="text" id="input_email" placeholder="Your email" required>
+        <label for="input_email">Email address format: *@*.*</label><br>
+        <input type="text" id="input_phone_number" placeholder="Your phone number" pattern="\d{3}[\-]\d{3}[\-]\d{3}">
+        <label for="input_phone_number">Phone number fomat: xxx-xxx-xxx</label><br>
+        <input placeholder="Your month of birth" list="birth_month">
+        <datalist id="birth_month">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+        </datalist>
+        <br>
+        <label for="input_content">Mail Content:</label>
+        <input type="text" id="input_content" size="100" required><br>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset">
+    </fieldset>
+</form>
+</body>
+</html>
