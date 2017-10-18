@@ -1,0 +1,27 @@
+.emText {
+    font-size: 1.25em;
+}
+
+.percText {
+    font-size: 125%;
+}
+
+.ptText {
+    font-size: 24pt;
+}
+
+.bgColor {
+    background-color: orangered;
+}
+
+.bgImage {
+    background-image: url(images/desktoplifecycles-2x.png);
+    background-attachment: scroll;
+    background-position: right;
+}
+
+
+nav > a {
+    text-decoration: solid;
+    font-weight: bold;
+}
