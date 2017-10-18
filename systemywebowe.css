@@ -25,3 +25,35 @@ nav > a {
     text-decoration: solid;
     font-weight: bold;
 }
+
+#find_us{
+    font-weight: bold;
+    font-size: 300%;
+}
+
+
+.article-card {
+    margin: 40px;
+}
+
+.article-content {
+    margin: 10px;
+    padding: 2%;
+}
+
+#fashion_image_fixed{
+    width: 15em;
+    height: 15em;
+    position: fixed;
+    right: 10em;
+    bottom: 5em;
+}
+
+#fashion_image_absolute{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    clear: both;
+}
