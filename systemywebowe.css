@@ -57,3 +57,29 @@ nav > a {
     right: 100px;
     clear: both;
 }
+
+.partner_logo {
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    height:100px;
+    border-width: 10px;
+    border-style: dotted;
+    border-color: #00E676;
+    box-shadow: -10px -10px 25px dimgrey;
+}
+
+.text1 {
+    font-family: "Arial Narrow";
+    font-weight: 900;
+    font-style: italic;
+    line-height: 200%;
+}
+
+p :active{
+    background-color: yellow;
+}
+
+input :disabled{
+    background-color: grey;
+}
