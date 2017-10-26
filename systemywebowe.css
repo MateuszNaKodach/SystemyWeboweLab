@@ -1,0 +1,85 @@
+.emText {
+    font-size: 1.25em;
+}
+
+.percText {
+    font-size: 125%;
+}
+
+.ptText {
+    font-size: 24pt;
+}
+
+.bgColor {
+    background-color: orangered;
+}
+
+.bgImage {
+    background-image: url(images/desktoplifecycles-2x.png);
+    background-attachment: scroll;
+    background-position: right;
+}
+
+
+nav > a {
+    text-decoration: solid;
+    font-weight: bold;
+}
+
+#find_us{
+    font-weight: bold;
+    font-size: 300%;
+}
+
+
+.article-card {
+    margin: 40px;
+}
+
+.article-content {
+    margin: 10px;
+    padding: 2%;
+}
+
+#fashion_image_fixed{
+    width: 15em;
+    height: 15em;
+    position: fixed;
+    right: 10em;
+    bottom: 5em;
+}
+
+#fashion_image_absolute{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    clear: both;
+}
+
+.partner_logo {
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    height:100px;
+    border-width: 10px;
+    border-style: dotted;
+    border-color: #00E676;
+    box-shadow: -10px -10px 25px dimgrey;
+}
+
+.text1 {
+    font-family: "Arial Narrow";
+    font-weight: 900;
+    font-style: italic;
+    line-height: 200%;
+}
+
+p :active{
+    background-color: yellow;
+}
+
+input :disabled{
+    background-color: grey;
+}

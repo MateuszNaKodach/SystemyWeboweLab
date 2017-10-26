@@ -8,13 +8,48 @@
     <meta name="author" content="Mateusz Nowak">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decily - Beta tests</title>
+    <style type="text/css">
+        @media all {
+            body {
+                background-color: lightblue;
+                background-image: url('images/internet.jpg');
+                background-repeat: repeat-y;
+                background-attachment: fixed;
+                background-size: auto 50%;
+            }
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+        }
+
+        :checked {
+            outline:3px solid greenyellow;
+        }
+
+        p :empty{
+            background-color:red;
+        }
+
+        legend :first-child {
+            background: greenyellow;
+        }
+        :focus{
+            color: red;
+        }
+
+        :required{
+            background: black;
+        }
+    </style>
 </head>
 <body>
 
 <h1>Decily App - Sign up for beta tests!</h1>
 
 <a href="index.html">MAIN PAGE</a>
-
+<p><!-- to jest czwarty przykładowy element "p" --></p>
 
 <form>
     <fieldset>
@@ -23,7 +58,7 @@
             Name:<br>
             <input title="name" type="text" placeholder="Name"><br>
             Email:<br>
-            <input title="email" type="email" placeholder="Email"><br>
+            <input title="email" type="email" placeholder="Email" required><br>
             Gender:<br>
             <input id="radio_male" type="radio" name="gender" value="male" checked>
             <label for="radio_male">Male</label><br>

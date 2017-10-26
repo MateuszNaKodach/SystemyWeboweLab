@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:layout="">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Free mobile app makes your decisions easily.">
@@ -8,94 +9,161 @@
     <meta name="author" content="Mateusz Nowak">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decily - Main Page</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="systemywebowe.css" media="screen,projection"/>
+    <style>
+        .style-inside-html {
+            color: #e0a800;
+        }
+    </style>
 </head>
 <body>
 
+<div class="center-align">
+    <h1>Decily App - Landing Page</h1>
+    <h2 class="style-inside-html">The app coming soon...</h2>
+</div>
 
-<h1>Decily App - Landing Page</h1>
-<h2>The app coming soon...</h2>
-
-<nav>
+<nav class="bgColor center-align">
     <a href="index.html">MAIN PAGE</a> |
     <a href="partners.html">PARTNERS</a> |
     <a href="tests_signup.html">SIGN FOR BETA TESTS</a> |
     <a href="fashion_blog.html">FASHION BLOG</a>
 </nav>
 
-<p>Our mission is to makes your decisions about <b>what to wear today</b> easily.</p>
+<div class="bgImage">
+<div class="container">
+    <p class="ptText">Our mission is to makes your decisions about <b>what to wear today</b> easily.</p>
 
 
-<p>Other users would help you in the decision. The can vote yes or no & add a comment also!</p>
-<img src="images/decilyPhone1.png" alt="An Emergency module of the app.">
-<a href="images/decilyPhone1.png" download="DecilyPhoneScreen">DOWNLOAD THE SCREEN</a>
+    <p>Other users would help you in the decision. The can vote yes or no & add a comment also!</p>
 
-<p>And you can be totally anonymous! Your family and friends will not know about your photos.</p>
-<img src="images/decilyPhone2.png" alt="Setting anonimity in the module." width="275" height="480">
-<a href="ftp://speedtest.tele2.net/1KB.zip" download="FTPDownloadTest">DOWNLOAD 1KB FROM FTP FOR TEST</a>
+    <div class="row center-align">
+        <div class="col s6">
+            <img src="images/decilyPhone1.png" alt="An Emergency module of the app.">
+        </div>
+        <div class="col s6">
+            <img src="images/decilyPhone2.png" alt="Setting anonimity in the module." width="275" height="480">
+        </div>
+    </div>
+    <div class="row center-align">
+        <div class="col s6">
+            <a href="images/decilyPhone1.png" download="DecilyPhoneScreen" class="emText">DOWNLOAD THE SCREEN</a>
+        </div>
+        <div class="col s6">
+            <a href="ftp://speedtest.tele2.net/1KB.zip" download="FTPDownloadTest" class="percText">DOWNLOAD 1KB FROM
+                FTP FOR TEST</a>
+        </div>
+    </div>
 
-<a href="partners.html">
-    <p>Checkout our partners!</p>
-</a>
-
-<table border="1" style="width:50%">
-    <caption>Last active users:</caption>
-    <thead>
-    <tr>
-        <th>Username</th>
-        <th>Date</th>
-        <th>Email activation:</th>
-        <th>Connected with Facebook:</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>michal</td>
-        <td>11.10.2017</td>
-        <td colspan="2">YES</td>
-    </tr>
-    <tr>
-        <td>mateusz</td>
-        <td>11.10.2017</td>
-        <td>NO</td>
-        <td>YES</td>
-    </tr>
-    <tr>
-        <td>agatka</td>
-        <td>10.10.2017</td>
-        <td colspan="2">NO</td>
-    </tr>
-    <tr>
-        <td>jack</td>
-        <td>9.10.2017</td>
-        <td>YES</td>
-        <td>NO</td>
-    </tr>
-    </tbody>
-</table>
-
-<a href="tests_signup.html">
-    <h1>Sign for beta tests!</h1>
-</a>
+    <p>And you can be totally anonymous! Your family and friends will not know about your photos.</p>
 
 
-<h3>Find us on:</h3>
-<a href="https://www.facebook.com/">
-    <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png" alt="Facebook profile link."
-         width="86" height="86">
-</a>
-<a href="https://www.instagram.com/">
-    <img src="https://image.flaticon.com/icons/png/512/69/69366.png" alt="Instagram profile link." width="86"
-         height="86">
-</a>
+    <a href="partners.html">
+        <p>Checkout our partners!</p>
+    </a>
 
-<h3>Or contact by email:</h3>
+    <table border="1" style="width:50%" class="st">
+        <caption>Last active users:</caption>
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Date</th>
+            <th>Email activation:</th>
+            <th>Connected with Facebook:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>michal</td>
+            <td>11.10.2017</td>
+            <td colspan="2">YES</td>
+        </tr>
+        <tr>
+            <td>mateusz</td>
+            <td>11.10.2017</td>
+            <td>NO</td>
+            <td>YES</td>
+        </tr>
+        <tr>
+            <td>agatka</td>
+            <td>10.10.2017</td>
+            <td colspan="2">NO</td>
+        </tr>
+        <tr>
+            <td>jack</td>
+            <td>9.10.2017</td>
+            <td>YES</td>
+            <td>NO</td>
+        </tr>
+        </tbody>
+    </table>
 
-<a href="mailto:contact@decilyapp.com">Sent email</a>
+    <a href="tests_signup.html" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Sign up for beta tests!</a>
 
-<a href="contact_us.html">
-    <p>maybe use the form:</p>
-</a>
+    <h3 id="find_us">Find us on:</h3>
+    <a href="https://www.facebook.com/">
+        <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png"
+             alt="Facebook profile link."
+             width="86" height="86">
+    </a>
+    <a href="https://www.instagram.com/">
+        <img src="https://image.flaticon.com/icons/png/512/69/69366.png" alt="Instagram profile link." width="86"
+             height="86">
+    </a>
 
+    <h3>Or contact by email:</h3>
 
+    <a href="mailto:contact@decilyapp.com">Sent email</a>
+
+    <div class="col s12 m7">
+        <h2 class="header">Contact us</h2>
+        <div class="card horizontal">
+            <div class="card-stacked">
+                <div class="card-content">
+                    <form action="mailto:contact@decilyapp.com" method="post" enctype="text/plain" autocomplete="on">
+                        <legend>Contact us</legend>
+                        <input type="text" id="input_first_name" placeholder="First name"><br>
+                        <input type="text" id="input_last_name" placeholder="Last name" required><br>
+                        <input type="text" id="input_email" placeholder="Your email" required>
+                        <label for="input_email">Email address format: *@*.*</label><br>
+                        <input type="text" id="input_phone_number" placeholder="Your phone number"
+                               pattern="\d{3}[\-]\d{3}[\-]\d{3}">
+                        <label for="input_phone_number">Phone number fomat: xxx-xxx-xxx</label><br>
+                        <input placeholder="Your month of birth" list="birth_month">
+                        <datalist id="birth_month">
+                            <option value="January">
+                            <option value="February">
+                            <option value="March">
+                            <option value="April">
+                            <option value="May">
+                            <option value="June">
+                            <option value="July">
+                            <option value="August">
+                            <option value="September">
+                            <option value="October">
+                            <option value="November">
+                            <option value="December">
+                        </datalist>
+                        <br>
+                        <label for="input_content">Mail Content:</label>
+                        <input type="text" id="input_content" size="100" required><br>
+                        <div class="card-action">
+                            <input class="waves-effect waves-light btn" type="submit" value="Send">
+                            <input class="waves-effect waves-light btn" type="reset" value="Reset">
+                            <input class="waves-effect waves-light btn" value="Disabled" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript" src="materialize/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>
