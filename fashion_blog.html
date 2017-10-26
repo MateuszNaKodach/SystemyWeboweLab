@@ -18,13 +18,25 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+
+        [title="main-header"]{
+            color: red;
+        }
+
+        :active {
+            color: blue;
+        }
+
+        :target {
+            color:red;
+        }
     </style>
 </head>
 <body>
 
 <div class="center-align">
-    <h1>Decily App - Landing Page</h1>
-    <h2 class="style-inside-html">The app coming soon...</h2>
+    <h1 title="main-header">Decily App - Landing Page</h1>
+    <h2 title="main-claim" class="style-inside-html">The app coming soon...</h2>
 </div>
 
 <nav class="bgColor center-align">
@@ -35,6 +47,12 @@
 </nav>
 
 <div id="blog-container" class="container">
+    <div class="row">
+        <div class="col s12" align="center">
+            <a href="#article-1">Article 1</a>
+            <a href="#article-2">Article 2</a>
+        </div>
+    </div>
     <div class="col s12 m7">
         <div class="card horizontal article-card">
             <div class="card-image">
@@ -43,7 +61,7 @@
             <div class="card-stacked">
                 <div class="card-content">
                     <article class="article-content">
-                        <h2>Article #1</h2>
+                        <h2 id="article-1">Article #1</h2>
                         <section>
                             <h3>Section1</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis magna a risus
@@ -103,7 +121,7 @@
             <div class="card-stacked">
                 <div class="card-content">
                     <article class="article-content">
-                        <h2>Article #2</h2>
+                        <h2 id="article-2">Article #2</h2>
 
                         <section>
                             <h3>Section1</h3>
