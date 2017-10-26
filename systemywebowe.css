@@ -67,6 +67,7 @@ nav > a {
     border-style: dotted;
     border-color: #00E676;
     box-shadow: -10px -10px 25px dimgrey;
+    border-radius: 30px;
 }
 
 .text1 {
@@ -74,6 +75,8 @@ nav > a {
     font-weight: 900;
     font-style: italic;
     line-height: 200%;
+    text-shadow:  2px 2px #00C853;
+    background-color: rgba(0, 0, 255, 0.3);
 }
 
 p :active{
@@ -82,4 +85,88 @@ p :active{
 
 input :disabled{
     background-color: grey;
+}
+
+.gradient-content{
+    background: red;
+    background: linear-gradient(red, yellow);
+}
+
+.grad-header{
+    background: red;
+    background: radial-gradient(red, yellow, green);
+}
+
+.border-slice-image{
+    border-image-slice: fill;
+    border-image: url('images/ic_bug_report_black_24dp.png');
+}
+
+/*
+Zdefiniować klasę, która za pomocą własności
+wyświetlania display: box, ustawi dla dzieci
+*/
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    height: 500px;
+}
+/*
+Bloki (informacje) powinny być umieszczone horyzontalnie, powinny mieć tło
+z zaokrąglonymi rogami i cieniem, i pewien niewielki odstęp między sobą.
+*/
+.flexbox > div {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 2em;
+    font-family: 'Unkempt', cursive;
+
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+
+    /* Specyfikując przejścia (transition) zmiany bloków powinny być płynne. */
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.flexbox > div:nth-child(even) {
+    background-color: #EEE;
+}
+
+/*
+Dla pierwszego dziecka (skrajnie lewego bloku) ustaw przy wyróżnianiu inny niż u
+pozostałych rodzaj czcionki, rozmiar czcionki i inną szybkość zmiany wyglądu.
+*/
+.flexbox > div:first-child {
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    transition: all 200ms ease;
+
+    font: bold 3em 'Bigelow Rules', cursive;
+    color: #abcdef;
+}
+
+/*
+Po naprowadzeniu kursora na blok powinien się on wyróżnić przez wytłuszczenie
+czcionki, zmianę koloru tła i tekstu oraz rozmiaru bloku (zachowując przyleganie
+do pozostałych). Każdy blok przy wyróżnieniu powinien mieć inny kolor tła.
+*/
+.flexbox > div:hover {
+    width: 50%;
+
+    background-color: #CCC;
+    color: white;
 }
