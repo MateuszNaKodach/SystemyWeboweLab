@@ -48,13 +48,15 @@ function enableFashionImage(begin, size) {
 function showFashionCards() {
     const fashionRow = document.getElementById("fashion-row");
     let rowIndex = 0;
-    fashionRow.innerHTML = "";
+    let content = '';
     do {
         if (fashionImages[rowIndex] && fashionImages[rowIndex].imageEnabled) {
-            fashionRow.innerHTML += '<div class="col s4"><img src=' + fashionImages[rowIndex].imageUrl +'></img></div>';
+            content += '<div class="col s4"><img src=' + fashionImages[rowIndex].imageUrl +'/></div>';
         }
         rowIndex++;
     } while (rowIndex < fashionImages.length);
+    fashionRow.innerHTML = content;
+    console.log(content);
 }
 
 function makeAllFashionImagesDisabled() {
@@ -80,15 +82,15 @@ window.addEventListener("click", function () {
                 window.alert("Good answer!");
                 break;
         }
-        //moveFashionImagesToLeft();
+        moveFashionImagesToLeft();
     } else {
         console.log(Math.random() + " Right click");
-        //moveFashionImagesToRight();
+        moveFashionImagesToRight();
     }
 });
-/*
+
 function moveFashionImagesToRight() {
-    if (actualStartImage + showFashionImageCount < actualStartImage.length - 1) {
+    if (actualStartImage + showFashionImageCount < fashionImages.length - 1) {
         actualStartImage += 1;
         enableFashionImage(actualStartImage, showFashionImageCount);
         showFashionCards();
@@ -99,9 +101,10 @@ function moveFashionImagesToRight() {
 function moveFashionImagesToLeft() {
     if (actualStartImage !== 0) {
         actualStartImage -= 1;
+        console.log(actualStartImage);
         enableFashionImage(actualStartImage, showFashionImageCount);
         showFashionCards();
         console.log("Left click.");
     }
 }
-*/
+
