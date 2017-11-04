@@ -1,20 +1,19 @@
-//document.writeln('<h1>Our new web page with JS!</h1>');
+document.writeln("<h1>Our new web page with JS!</h1>");
 
-document.getElementById('users-table')
+document.getElementById("users-table")
     .onclick = function () {
-    window.alert('Lista jest aktualizowana codziennie o północy.')
+    window.alert("Lista jest aktualizowana codziennie o północy.");
 };
 
-const button = document.getElementById('button-js');
-button.addEventListener('click', function () {
-    console.log('alal')
-    let allButtonsOnSite = document.getElementsByClassName('btn');
+const button = document.getElementById("button-js");
+button.addEventListener("click", function () {
+    let allButtonsOnSite = document.getElementsByClassName("btn");
     for (let i = 0; i < allButtonsOnSite.length; i++) {
         let currentButton = allButtonsOnSite[i];
-        if (currentButton.style.backgroundColor === 'blue') {
-            allButtonsOnSite[i].style.backgroundColor = 'red';
+        if (currentButton.style.backgroundColor === "blue") {
+            allButtonsOnSite[i].style.backgroundColor = "red";
         } else {
-            allButtonsOnSite[i].style.backgroundColor = 'blue';
+            allButtonsOnSite[i].style.backgroundColor = "blue";
         }
     }
 });
@@ -27,12 +26,12 @@ class FashionImage {
 }
 
 let fashionImages = [
-    new FashionImage('images/fashion1.jpg', false),
-    new FashionImage('images/fashion2.jpg', false),
-    new FashionImage('images/fashion3.jpg', false),
-    new FashionImage('images/fashion4.jpg', false),
-    new FashionImage('images/fashion5.jpg', false),
-    new FashionImage('images/fashion6.jpg', false)
+    new FashionImage("images/fashion1.jpg", false),
+    new FashionImage("images/fashion2.jpg", false),
+    new FashionImage("images/fashion3.jpg", false),
+    new FashionImage("images/fashion4.jpg", false),
+    new FashionImage("images/fashion5.jpg", false),
+    new FashionImage("images/fashion6.jpg", false)
 ];
 
 function enableFashionImage(begin, size) {
@@ -47,16 +46,20 @@ function enableFashionImage(begin, size) {
 }
 
 function showFashionCards() {
-    const fashionRow = document.getElementById('fashion-row');
+    const fashionRow = document.getElementById("fashion-row");
     let rowIndex = 0;
-    fashionRow.innerHTML = '';
+    fashionRow.innerHTML = ""
+    "";
     do {
         if (fashionImages[rowIndex] && fashionImages[rowIndex].imageEnabled) {
             fashionRow.innerHTML +=
-                '  <div class="col s4"><img src= ' + fashionImages[rowIndex].imageUrl + '/></div>';
+                "" < div
+        class
+            = "col s4" > < img
+            src = "" + fashionImages[rowIndex].imageUrl + "/></div>";
         }
         rowIndex++;
-    } while (rowIndex<fashionImages.length);
+    } while (rowIndex < fashionImages.length);
 }
 
 function makeAllFashionImagesDisabled() {
@@ -66,8 +69,44 @@ function makeAllFashionImagesDisabled() {
 }
 
 let actualStartImage = 0;
-let showFashionImageCount = '3';
+let showFashionImageCount = Math.floor(3.5);
 
 enableFashionImage(actualStartImage, showFashionImageCount);
 showFashionCards();
 
+window.addEventListener("click", function () {
+    if (window.event.clientX <= window.innerWidth * parseFloat("0.5")) {
+        var prompt = window.prompt("Was it right click?");
+        switch (prompt) {
+            case "yes":
+                window.alert("Bad answer!");
+                break;
+            case "no":
+                window.alert("Good answer!");
+                break;
+        }
+        //moveFashionImagesToLeft();
+    } else {
+        console.log(Math.random() + " Right click");
+        //moveFashionImagesToRight();
+    }
+});
+/*
+function moveFashionImagesToRight() {
+    if (actualStartImage + showFashionImageCount < actualStartImage.length - 1) {
+        actualStartImage += 1;
+        enableFashionImage(actualStartImage, showFashionImageCount);
+        showFashionCards();
+        console.log("Right click.");
+    }
+}
+
+function moveFashionImagesToLeft() {
+    if (actualStartImage !== 0) {
+        actualStartImage -= 1;
+        enableFashionImage(actualStartImage, showFashionImageCount);
+        showFashionCards();
+        console.log("Left click.");
+    }
+}
+*/
