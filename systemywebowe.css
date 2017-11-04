@@ -20,17 +20,15 @@
     background-position: right;
 }
 
-
 nav > a {
     text-decoration: solid;
     font-weight: bold;
 }
 
-#find_us{
+#find_us {
     font-weight: bold;
     font-size: 300%;
 }
-
 
 .article-card {
     margin: 40px;
@@ -41,7 +39,7 @@ nav > a {
     padding: 2%;
 }
 
-#fashion_image_fixed{
+#fashion_image_fixed {
     width: 15em;
     height: 15em;
     position: fixed;
@@ -49,7 +47,7 @@ nav > a {
     bottom: 5em;
 }
 
-#fashion_image_absolute{
+#fashion_image_absolute {
     width: 80px;
     height: 80px;
     position: absolute;
@@ -62,11 +60,12 @@ nav > a {
     margin: 5px;
     padding: 5px;
     width: 100px;
-    height:100px;
+    height: 100px;
     border-width: 10px;
     border-style: dotted;
     border-color: #00E676;
     box-shadow: -10px -10px 25px dimgrey;
+    border-radius: 30px;
 }
 
 .text1 {
@@ -74,12 +73,88 @@ nav > a {
     font-weight: 900;
     font-style: italic;
     line-height: 200%;
+    text-shadow: 2px 2px #00C853;
+    background-color: rgba(0, 0, 255, 0.3);
 }
 
-p :active{
+p :active {
     background-color: yellow;
 }
 
-input :disabled{
+input :disabled {
     background-color: grey;
+}
+
+.gradient-content {
+    background: red;
+    background: linear-gradient(red, yellow);
+}
+
+.grad-header {
+    background: red;
+    background: radial-gradient(red, yellow, green);
+}
+
+.border-slice-image {
+    border-image-slice: fill;
+    border-image: url('images/ic_bug_report_black_24dp.png');
+}
+
+.decily-screen:hover {
+    transform: scale(1.5);
+}
+
+.decily-screen-2{
+    transition: width 2s;
+}
+
+.decily-screen-2:hover{
+    width: 150%;
+    height: 150%;
+}
+
+.partner-rotate{
+    transition: all 1s;
+}
+
+.partner-skew{
+    transition: all 1s;
+}
+
+.partner-skew:hover{
+    transform: skewY(30deg);
+}
+
+.partner-rotate:hover{
+    transform: rotate(360deg);
+}
+
+@keyframes animation-color {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+@font-face {
+    font-family: externalFont;
+    src: url(https://fonts.googleapis.com/css?family=Saira+Extra+Condensed);
+}
+
+#decily-header:hover {
+    animation-name: animation-color;
+    animation-duration: 5s;
+    font-family: externalFont sans-serif;
+}
+
+.three-columns{
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: 4px outset orangered;
+}
+
+@media(min-width: 1000px){
+    .three-columns{
+        column-count: 4;
+    }
 }
