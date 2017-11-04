@@ -76,22 +76,11 @@ showFashionCards();
 
 window.addEventListener("click", function () {
     if (window.event.clientX <= window.innerWidth * parseFloat("0.5")) {
-        var prompt = window.prompt("Was it right click?");
-        switch (prompt) {
-            case "yes":
-                window.alert("Bad answer!");
-                break;
-            case "no":
-                window.alert("Good answer!");
-                break;
-        }
-        //moveFashionImagesToLeft();
+        moveFashionImagesToLeft();
     } else {
-        console.log(Math.random() + " Right click");
-        //moveFashionImagesToRight();
+        moveFashionImagesToRight();
     }
 });
-/*
 function moveFashionImagesToRight() {
     if (actualStartImage + showFashionImageCount < actualStartImage.length - 1) {
         actualStartImage += 1;
@@ -109,4 +98,4 @@ function moveFashionImagesToLeft() {
         console.log("Left click.");
     }
 }
-*/
+
