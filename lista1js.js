@@ -20,21 +20,19 @@ button.addEventListener('click', function () {
 });
 
 class FashionImage {
-    constructor(imageUrl, enabled) {
+    constructor(imageUrl, imageEnabled) {
         this.imageUrl = imageUrl;
-        this.enabled = enabled;
+        this.imageEnabled = imageEnabled;
     }
 }
 
-const fashionImages = [
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false),
-    new FashionImage('http://lorempixel.com/300/400/fashion/', false)
+let fashionImages = [
+    new FashionImage('images/fashion1.jpg', false),
+    new FashionImage('images/fashion2.jpg', false),
+    new FashionImage('images/fashion3.jpg', false),
+    new FashionImage('images/fashion4.jpg', false),
+    new FashionImage('images/fashion5.jpg', false),
+    new FashionImage('images/fashion6.jpg', false)
 ];
 
 function enableFashionImage(begin, size) {
@@ -42,8 +40,8 @@ function enableFashionImage(begin, size) {
     const sizeInt = parseInt(size);
     let i = begin;
     makeAllFashionImagesDisabled();
-    while (i < begin + size || i < fashionImages.length) {
-        fashionImages[i].enabled = true;
+    while (i < beginInt + sizeInt) {
+        fashionImages[i].imageEnabled = true;
         i++;
     }
 }
@@ -53,19 +51,23 @@ function showFashionCards() {
     let rowIndex = 0;
     fashionRow.innerHTML = '';
     do {
-        if (fashionImages[rowIndex].enabled) {
+        if (fashionImages[rowIndex] && fashionImages[rowIndex].imageEnabled) {
             fashionRow.innerHTML +=
                 '  <div class="col s4"><img src= ' + fashionImages[rowIndex].imageUrl + '/></div>';
         }
         rowIndex++;
-    } while (fashionImages[rowIndex] !== null);
+    } while (rowIndex<fashionImages.length);
 }
 
 function makeAllFashionImagesDisabled() {
     for (let i = 0; i < fashionImages.length; i++) {
-        fashionImages[i].enabled = false;
+        fashionImages[i].imageEnabled = false;
     }
 }
 
-enableFashionImage(0, 3);
+let actualStartImage = 0;
+let showFashionImageCount = '3';
+
+enableFashionImage(actualStartImage, showFashionImageCount);
 showFashionCards();
+
