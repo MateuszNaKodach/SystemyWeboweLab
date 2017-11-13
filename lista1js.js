@@ -71,16 +71,21 @@ let showFashionImageCount = Math.floor(3.5);
 enableFashionImage(actualStartImage, showFashionImageCount);
 showFashionCards();
 
+let windowPromptShown = false;
+
 window.addEventListener("click", function () {
     if (window.event.clientX <= window.innerWidth * parseFloat("0.5")) {
-        var prompt = window.prompt("Was it right click?");
-        switch (prompt) {
-            case "yes":
-                window.alert("Bad answer!");
-                break;
-            case "no":
-                window.alert("Good answer!");
-                break;
+        if(!windowPromptShown) {
+            var prompt = window.prompt("Was it right click?");
+            switch (prompt) {
+                case "yes":
+                    window.alert("Bad answer!");
+                    break;
+                case "no":
+                    window.alert("Good answer!");
+                    break;
+            }
+            windowPromptShown = true;
         }
         moveFashionImagesToLeft();
     } else {
