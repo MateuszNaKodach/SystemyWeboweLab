@@ -20,14 +20,16 @@
     </style>
 </head>
 <body>
-
+<?php
+ echo "<h2>Lalala</h2>";
+?>
 <div class="center-align">
     <h1 id="decily-header">Decily App - Landing Page</h1>
     <h2 class="style-inside-html">The app coming soon...</h2>
 </div>
 
 <nav class="bgColor center-align">
-    <a href="index.html">MAIN PAGE</a> |
+    <a href="index.php">MAIN PAGE</a> |
     <a href="partners.html">PARTNERS</a> |
     <a href="tests_signup.html">SIGN FOR BETA TESTS</a> |
     <a href="fashion_blog.html">FASHION BLOG</a>
@@ -126,16 +128,15 @@
             <div class="card horizontal">
                 <div class="card-stacked">
                     <div class="card-content">
-                        <form action="mailto:contact@decilyapp.com" method="post" enctype="text/plain"
-                              autocomplete="on">
-                            <input type="text" id="input_first_name" placeholder="First name"><br>
-                            <input type="text" id="input_last_name" placeholder="Last name" required><br>
-                            <input type="text" id="input_email" placeholder="Your email" required>
+                        <form action="thank-you.php" method="post">
+                            <input type="text" id="input_first_name" placeholder="First name" name="first_name"><br>
+                            <input type="text" id="input_last_name" placeholder="Last name" required name="last_name"><br>
+                            <input type="text" id="input_email" placeholder="Your email" required name="email">
                             <label for="input_email">Email address format: *@*.*</label><br>
                             <input type="text" id="input_phone_number" placeholder="Your phone number"
-                                   pattern="\d{3}[\-]\d{3}[\-]\d{3}">
+                                   pattern="\d{3}[\-]\d{3}[\-]\d{3}" name="phone">
                             <label for="input_phone_number">Phone number fomat: xxx-xxx-xxx</label><br>
-                            <input placeholder="Your month of birth" list="birth_month">
+                            <input placeholder="Your month of birth" list="birth_month" name="birth_month">
                             <datalist id="birth_month">
                                 <option value="January">
                                 <option value="February">
@@ -151,8 +152,21 @@
                                 <option value="December">
                             </datalist>
                             <br>
-                            <label for="input_content">Mail Content:</label>
-                            <input type="text" id="input_content" size="100" required><br>
+                            <label for="input_content">Message Content:</label>
+                            <input type="text" id="input_content" size="100" required name="message_content"><br>
+
+                            <label for="input_content">Additional informations:</label><br>
+                            Gender:<br>
+                            <input id="radio_male" type="radio" name="gender" value="male" checked>
+                            <label for="radio_male">Male</label><br>
+                            <input id="radio_female" type="radio" name="gender" value="female">
+                            <label for="radio_female">Female</label><br>
+
+                            Please check true statements about you:<br>
+                            <input type="checkbox" id="checkbox1" name="check_buy_online"><label for="checkbox1">I buy clothes online</label>
+                            <input type="checkbox" id="checkbox2" name="check_need_advice"><label for="checkbox2">I sometimes need advice about my look</label>
+
+
                             <div class="card-action">
                                 <input class="waves-effect waves-light btn" type="submit" value="Send">
                                 <input class="waves-effect waves-light btn" type="reset" value="Reset">
