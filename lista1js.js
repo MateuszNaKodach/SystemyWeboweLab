@@ -75,7 +75,7 @@ let windowPromptShown = false;
 
 window.addEventListener("click", function () {
     if (window.event.clientX <= window.innerWidth * parseFloat("0.5")) {
-        if(!windowPromptShown) {
+       /* if(!windowPromptShown) {
             var prompt = window.prompt("Was it right click?");
             switch (prompt) {
                 case "yes":
@@ -86,7 +86,7 @@ window.addEventListener("click", function () {
                     break;
             }
             windowPromptShown = true;
-        }
+        }*/
         moveFashionImagesToLeft();
     } else {
         console.log(Math.random() + " Right click");
