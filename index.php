@@ -20,9 +20,6 @@
     </style>
 </head>
 <body>
-<?php
- echo "<h2>Lalala</h2>";
-?>
 <div class="center-align">
     <h1 id="decily-header">Decily App - Landing Page</h1>
     <h2 class="style-inside-html">The app coming soon...</h2>
@@ -32,11 +29,12 @@
     <a href="index.php">MAIN PAGE</a> |
     <a href="partners.html">PARTNERS</a> |
     <a href="tests_signup.html">SIGN FOR BETA TESTS</a> |
-    <a href="fashion_blog.html">FASHION BLOG</a>
+    <a href="fashion_blog.php">FASHION BLOG</a>
 </nav>
 
 <div class="bgImage">
     <div class="container">
+
         <p class="ptText">Our mission is to makes your decisions about <b>what to wear today</b> easily.</p>
 
 
@@ -130,7 +128,8 @@
                     <div class="card-content">
                         <form action="thank-you.php" method="post">
                             <input type="text" id="input_first_name" placeholder="First name" name="first_name"><br>
-                            <input type="text" id="input_last_name" placeholder="Last name" required name="last_name"><br>
+                            <input type="text" id="input_last_name" placeholder="Last name" required
+                                   name="last_name"><br>
                             <input type="text" id="input_email" placeholder="Your email" required name="email">
                             <label for="input_email">Email address format: *@*.*</label><br>
                             <input type="text" id="input_phone_number" placeholder="Your phone number"
@@ -163,8 +162,10 @@
                             <label for="radio_female">Female</label><br>
 
                             Please check true statements about you:<br>
-                            <input type="checkbox" id="checkbox1" name="check_buy_online"><label for="checkbox1">I buy clothes online</label>
-                            <input type="checkbox" id="checkbox2" name="check_need_advice"><label for="checkbox2">I sometimes need advice about my look</label>
+                            <input type="checkbox" id="checkbox1" name="check_buy_online"><label for="checkbox1">I buy
+                                clothes online</label>
+                            <input type="checkbox" id="checkbox2" name="check_need_advice"><label for="checkbox2">I
+                                sometimes need advice about my look</label>
 
 
                             <div class="card-action">
@@ -192,5 +193,7 @@
 <script type="text/javascript" src="materialize/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 <script src="lista1js.js"></script>
+<script src="material-plugins.js"></script>
+
 </body>
 </html>

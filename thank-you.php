@@ -47,15 +47,15 @@
                     $genders = array('mezczyzna' => 'male', 'kobieta' => 'female');
 
 
-                    assign_identifier_to_variable_if_exists('first_name', $first_name);
-                    assign_identifier_to_variable_if_exists('last_name', $last_name);
-                    assign_identifier_to_variable_if_exists('email', $email_address);
-                    assign_identifier_to_variable_if_exists('phone', $phone_number);
-                    assign_identifier_to_variable_if_exists('birth_month', $month_of_birth);
-                    assign_identifier_to_variable_if_exists('message_content', $message);
-                    assign_identifier_to_variable_if_exists('gender', $gender);
-                    assign_identifier_to_variable_if_exists('check_buy_online', $buy_online);
-                    assign_identifier_to_variable_if_exists('check_need_advice', $need_advice);
+                    assign_identifier_to_variable_if_exists_in_post_body('first_name', $first_name);
+                    assign_identifier_to_variable_if_exists_in_post_body('last_name', $last_name);
+                    assign_identifier_to_variable_if_exists_in_post_body('email', $email_address);
+                    assign_identifier_to_variable_if_exists_in_post_body('phone', $phone_number);
+                    assign_identifier_to_variable_if_exists_in_post_body('birth_month', $month_of_birth);
+                    assign_identifier_to_variable_if_exists_in_post_body('message_content', $message);
+                    assign_identifier_to_variable_if_exists_in_post_body('gender', $gender);
+                    assign_identifier_to_variable_if_exists_in_post_body('check_buy_online', $buy_online);
+                    assign_identifier_to_variable_if_exists_in_post_body('check_need_advice', $need_advice);
 
                     $request_time = 'REQUEST_TIME';
 

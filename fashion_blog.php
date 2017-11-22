@@ -19,7 +19,7 @@
             background-attachment: fixed;
         }
 
-        [title="main-header"]{
+        [title="main-header"] {
             color: red;
         }
 
@@ -28,14 +28,14 @@
         }
 
         :target {
-            color:red;
+            color: red;
         }
     </style>
 </head>
 <body>
 
 <div class="center-align">
-    <h1 title="main-header">Decily App - Landing Page</h1>
+    <h1 title="main-header">Decily App - Fashion Blog</h1>
     <h2 title="main-claim" class="style-inside-html">The app coming soon...</h2>
 </div>
 
@@ -43,10 +43,80 @@
     <a href="index.php">MAIN PAGE</a> |
     <a href="partners.html">PARTNERS</a> |
     <a href="tests_signup.html">SIGN FOR BETA TESTS</a> |
-    <a href="fashion_blog.html">FASHION BLOG</a>
+    <a href="fashion_blog.php">FASHION BLOG</a>
 </nav>
 
 <div id="blog-container" class="container">
+
+    <?php
+    session_start();
+
+
+    if (isset($_SESSION['logged_username'])) {
+        $logged_username = $_SESSION['logged_username'];
+
+        echo "<p>Witaj ".$logged_username."</p>";
+
+    } else {
+        echo "
+      <div class=\"col s12 center-align\">
+        <h3>Don't you have an account? <a class=\"modal-trigger\" href=\"#registration-modal\">Sign up!</a></h3>
+    </div>
+    
+        <div id=\"registration-modal\" class=\"modal\">
+        <form action=\"view-registration.php\" method=\"post\">
+            <div class=\"modal-content\">
+                <h4>Decily Registration</h4>
+                <div class=\"registration-form-content\">
+                    <p>It's nice to meet you! Please introduce yourself better.</p>
+                    <div class=\"row\">
+                        <div class=\"input-field col s5 left-align\">
+                            <input id=\"registration_username\" type=\"text\" name=\"username\" maxlength=\"24\" required>
+                            <label for=\"registration_username\">Username</label>
+                        </div>
+                        <div class=\"input-field col s5 right-align\">
+                            <input id=\"registration_email\" type=\"email\" class=\"validate\" name=\"email\"
+                                   maxlength=\"255\"
+                                   required>
+                            <label for=\"registration_email\">E-mail address</label>
+                        </div>
+                    </div>
+                    <div class=\"row\">
+                        <div class=\"input-field col s5 left-align\">
+                            <input id=\"registration_password\" type=\"password\" name=\"password\" required>
+                            <label for=\"registration_password\">Password</label>
+                        </div>
+                        <div class=\"input-field col s5 right-align\">
+                            <input id=\"registration_repeat_password\" type=\"password\" name=\"password-repeated\" required>
+                            <label for=\"registration_repeat_password\">Repeat password</label>
+                        </div>
+                    </div>
+                    <div class=\"row\">
+                        <div class=\"input-field col s6\">
+                            <select id=\"registration_cloth_type\" name=\"cloth-type\">
+                                <option value=\"MALE\" selected>MALE</option>
+                                <option value=\"FEMALE\">FEMALE</option>
+                                <option value=\"UNISEX\">UNISEX</option>
+                            </select>
+                            <label for=\"registration_cloth_type\">Which kind of clothes do you often wear?</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class=\"modal-footer\">
+                <input id=\"registration_confirm\" type=\"submit\"
+                       class=\"modal-action waves-effect waves-green btn-flat\"
+                       value=\"REGISTER\">
+                <a class=\"modal-action modal-close waves-effect waves-green btn-flat\">CANCEL</a>
+            </div>
+
+        </form>
+    </div>
+     ";
+    }
+    ?>
+
     <div class="row">
         <div class="col s12 center-align">
             <a href="#article-1">Article 1</a>
@@ -150,7 +220,8 @@
 
                         <section>
                             <h3>Section2</h3>
-                            <p class="three-columns">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis magna a risus
+                            <p class="three-columns">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                quis magna a risus
                                 tincidunt vestibulum
                                 id id
                                 massa. Duis sit amet malesuada risus. Curabitur sed lorem vitae elit mattis sagittis
@@ -194,5 +265,6 @@
 </div>
 <script type="text/javascript" src="materialize/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script src="material-plugins.js"></script>
 </body>
 </html>
