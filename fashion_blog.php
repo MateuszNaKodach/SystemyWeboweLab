@@ -56,11 +56,11 @@
 
         echo "<div class=\"col s12 m7\">
         <div class=\"card horizontal article-card\">
-            <div class=\"card-stacked article-content\">" .
-            "<h6>Witaj " . $logged_username . "</h6>" .
+            <div class=\"card-stacked article-content center-align\">" .
+            "<h4>" . $logged_username . ", welcome to our blog!</h4>" .
             "<div class=\"card-action\">
-                <form action='logout.php'>
-                 <input class=\"waves-effect waves-light btn\" type=\"submit\" value=\"Log out!\">
+                <form action='logout.php' id='logout-form'>
+                 <button class=\"waves-effect waves-light btn\" type=\"submit\" form='logout-form'>Log out</button>
 </form>
                   
                 </div>
@@ -74,7 +74,7 @@
        <div class=\"col s12 m7\">
         <div class=\"card horizontal article-card\">
             <div class=\"card-stacked article-content\">
-                <form action='service-login.php' method=\"post\">
+                <form action='service-login.php' method=\"post\" id='login-form'>
                     <div class=\"row\">
                         <div class=\"input-field col s4 left-align\">
                             <input id=\"registration_username\" type=\"text\" name=\"username\" maxlength=\"24\" required>
@@ -84,7 +84,7 @@
                             <input id=\"registration_password\" type=\"password\" name=\"password\" required>
                             <label for=\"registration_password\">Password</label>
                         </div>
-                        <input class=\"waves-effect waves-light btn\" type=\"submit\" value=\"Log in\">
+                        <button class=\"waves-effect waves-light btn\" type=\"submit\" form='login-form'>Log in</button>
                     </div>
                    </form>
                    <div class='row center-align'>";
@@ -289,6 +289,18 @@
 
     </div>
 
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red" type="">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
 
     <footer>
         <details>
