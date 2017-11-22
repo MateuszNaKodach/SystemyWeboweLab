@@ -14,29 +14,32 @@ session_start();
 
 loginUser($mysql_connection);
 
+$mysql_connection->close();
 
-function loginUser(mysqli $mysql_connection){
+
+function loginUser(mysqli $mysql_connection)
+{
 
     if (checkIfLoginRequestIsComplete()) {
 
         $username = $_POST['username'];
-        $password = calculateMd5Hash($_POST['password']);
+        $password = md5($_POST['password']);
 
         if ($found_user = checkIfPasswordIsCorrectForUser($mysql_connection, $username, $password)) {
-            $found_user->fetch_assoc();
+            $found_user_data = $found_user->fetch_assoc();
 
-            $_SESSION['logged_username'] = $found_user['username'];
-            $_SESSION['logged_email'] = $found_user['default_cloth_type'];
-            $_SESSION['logged_cloth_type'] = $found_user['default_cloth_type'];
+            $_SESSION['logged_username'] = $found_user_data['username'];
+            $_SESSION['logged_email'] = $found_user_data['default_cloth_type'];
+            $_SESSION['logged_cloth_type'] = $found_user_data['default_cloth_type'];
 
             $found_user->free_result();
-
-            header('Location: fashion_blog.php');
-        }else{
-            echo "<p style='color: red'>Incorrect username or password.</p>";
+            unset($_SESSION['last_login_error']);
+        } else {
+            $_SESSION['last_login_error'] = "<span style='color: red'>Incorrect username or password.</span>";
         }
+        header('Location: fashion_blog.php');
 
-        $mysql_connection->close();
+        $found_user->close();
     }
 }
 

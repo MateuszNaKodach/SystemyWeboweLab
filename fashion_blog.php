@@ -47,7 +47,6 @@
 </nav>
 
 <div id="blog-container" class="container">
-
     <?php
     session_start();
 
@@ -55,12 +54,52 @@
     if (isset($_SESSION['logged_username'])) {
         $logged_username = $_SESSION['logged_username'];
 
-        echo "<p>Witaj ".$logged_username."</p>";
+        echo "<div class=\"col s12 m7\">
+        <div class=\"card horizontal article-card\">
+            <div class=\"card-stacked article-content\">" .
+            "<h6>Witaj " . $logged_username . "</h6>" .
+            "<div class=\"card-action\">
+                <form action='logout.php'>
+                 <input class=\"waves-effect waves-light btn\" type=\"submit\" value=\"Log out!\">
+</form>
+                  
+                </div>
+            </div>
+        </div>
+    </div>";
 
     } else {
         echo "
-      <div class=\"col s12 center-align\">
-        <h3>Don't you have an account? <a class=\"modal-trigger\" href=\"#registration-modal\">Sign up!</a></h3>
+
+       <div class=\"col s12 m7\">
+        <div class=\"card horizontal article-card\">
+            <div class=\"card-stacked article-content\">
+                <form action='service-login.php' method=\"post\">
+                    <div class=\"row\">
+                        <div class=\"input-field col s4 left-align\">
+                            <input id=\"registration_username\" type=\"text\" name=\"username\" maxlength=\"24\" required>
+                            <label for=\"registration_username\">Username</label>
+                        </div>
+                        <div class=\"input-field col s4 right-align\">
+                            <input id=\"registration_password\" type=\"password\" name=\"password\" required>
+                            <label for=\"registration_password\">Password</label>
+                        </div>
+                        <input class=\"waves-effect waves-light btn\" type=\"submit\" value=\"Log in\">
+                    </div>
+                   </form>
+                   <div class='row center-align'>";
+        if (isset($_SESSION['last_login_error'])) {
+            echo $_SESSION['last_login_error'];
+        }
+
+        echo "</div>
+                <div class=\"card-action\">
+                    <div class=\"col s12 center-align\">
+                        <h5>Don't you have an account? <a class=\"modal-trigger\" href=\"#registration-modal\">Sign up!</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
         <div id=\"registration-modal\" class=\"modal\">
@@ -112,8 +151,7 @@
             </div>
 
         </form>
-    </div>
-     ";
+    </div>";
     }
     ?>
 
@@ -214,9 +252,6 @@
                                 luctus posuere.</p>
                         </section>
 
-                        <aside class="center-align">
-                            <img id="fashion_image_fixed" src="images/fashion.png" alt="Fashion image."/>
-                        </aside>
 
                         <section>
                             <h3>Section2</h3>
