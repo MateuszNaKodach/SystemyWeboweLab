@@ -155,6 +155,10 @@
     }
     ?>
 
+    <?php
+        require_once 'service-readallarticles.php'
+    ?>
+
     <div class="row">
         <div class="col s12 center-align">
             <a href="#article-1">Article 1</a>
@@ -289,18 +293,21 @@
 
     </div>
 
+    <?php
 
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red" type="">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
+    if (isset($_SESSION['logged_username'])) {
+        echo "   
+    <div class=\"fixed-action-btn\">
+        <form id=\"create-article-action\" action=\"view-createarticle.php\" method=\"get\">
+        <button class=\"btn-floating btn-large red\" form=\"create-article-action\">
+            <i class=\"large material-icons\">mode_edit</i>
+        </button>
+        </form>
     </div>
+    ";
+    }
+    ?>
+
 
     <footer>
         <details>

@@ -28,9 +28,11 @@ function loginUser(mysqli $mysql_connection)
         if ($found_user = checkIfPasswordIsCorrectForUser($mysql_connection, $username, $password)) {
             $found_user_data = $found_user->fetch_assoc();
 
+            $_SESSION['logged_id'] = $found_user_data['id'];
             $_SESSION['logged_username'] = $found_user_data['username'];
             $_SESSION['logged_email'] = $found_user_data['default_cloth_type'];
             $_SESSION['logged_cloth_type'] = $found_user_data['default_cloth_type'];
+            $_SESSION['logged_admin'] = $found_user_data['is_admin'];
 
             $found_user->free_result();
             unset($_SESSION['last_login_error']);
