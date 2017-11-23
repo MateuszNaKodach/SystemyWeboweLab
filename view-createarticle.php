@@ -40,6 +40,10 @@
                         <?php
                         session_start();
 
+                        if (!isset($_SESSION['logged_id'])) {
+                            header('Location: fashion_blog.php');
+                        }
+
                         if (isset($_SESSION['logged_admin']) && $_SESSION['logged_admin']) {
                             echo " <input type=\"checkbox\" id=\"published-checkbox\" name=\"article_published\"><label for=\"published-checkbox\">Publish article now</label>";
                         }

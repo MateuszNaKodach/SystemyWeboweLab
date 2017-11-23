@@ -10,8 +10,12 @@
     font-size: 24pt;
 }
 
-.bgColor {
+.bgColorRed {
     background-color: orangered;
+}
+
+.bgColorBlue {
+    color: blue;
 }
 
 .bgImage {

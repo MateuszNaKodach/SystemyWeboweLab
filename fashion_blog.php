@@ -39,12 +39,25 @@
     <h2 title="main-claim" class="style-inside-html">The app coming soon...</h2>
 </div>
 
-<nav class="bgColor center-align">
+
+<nav class="center-align">
     <a href="index.php">MAIN PAGE</a> |
     <a href="partners.html">PARTNERS</a> |
     <a href="tests_signup.html">SIGN FOR BETA TESTS</a> |
     <a href="fashion_blog.php">FASHION BLOG</a>
 </nav>
+
+
+
+<?php
+if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
+    echo $_COOKIE['style-color'];
+    echo "<div style='background-color: blue'>";
+} else{
+    echo $_COOKIE['style-color'];
+    echo "<div style='background-color: red'>";
+}
+?>
 
 <div id="blog-container" class="container">
     <?php
@@ -315,7 +328,19 @@
             <p> - by Decily. All Rights Reserved.</p>
             <p>All content and graphics on this web site are the property of the company Decily.</p>
         </details>
+
+        <div>
+                <form action='service-cookiestyle.php' method="post" id='blue-style-form'>
+                    <input hidden name="style" type="text" value="blue" required>
+                        <button class="waves-effect waves-light btn" style="background-color: blue" type="submit" form='blue-style-form'>BLUE BLOG STYLE</button>
+                </form>
+            <form action='service-cookiestyle.php' method="post" id='red-style-form'>
+                <input hidden name="style" type="text" value="red" required>
+                <button class="waves-effect waves-light btn" style="background-color: red" type="submit" form='red-style-form'>RED BLOG STYLE</button>
+            </form>
+        </div>
     </footer>
+</div>
 </div>
 <script type="text/javascript" src="materialize/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
