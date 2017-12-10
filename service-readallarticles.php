@@ -28,21 +28,18 @@ function load_all_published_articles(mysqli $mysql_connection, $all_articles_dat
             echo "
     <div class=\"col s12 m7\">
         <div class=\"card horizontal article-card\">
-            <div class=\"card-image\">
-                <img src=\"https://lorempixel.com/200/880/nature/6\" alt=\"Image placeholder.\">
-            </div>
+         
             <div class=\"card-stacked\">
                 <div class=\"card-content\">
                     <article class=\"article-content\">
                         <h2>" . $article['title'] . "</h2>
                         <section>
-                            <h3>Section1</h3>
+                           
                             <p>" . $article['content'] . "</p>
                         </section>
                     </article>
                 </div>
                 <div class=\"card-action\">
-                 
                 </div>
             </div>
         </div>

@@ -51,10 +51,8 @@
 
 <?php
 if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
-    echo $_COOKIE['style-color'];
     echo "<div style='background-color: blue'>";
 } else{
-    echo $_COOKIE['style-color'];
     echo "<div style='background-color: red'>";
 }
 ?>

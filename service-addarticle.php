@@ -20,7 +20,7 @@ if (checkIfAddArticleRequestIsComplete()) {
     $mysql_connection->close();
 
     echo "<p>You article was added!</p>";
-}else{
+} else {
     echo "<p>You need to fill all article fields!</p>";
 }
 
@@ -28,7 +28,7 @@ header('Location: fashion_blog.php');
 
 function checkIfAddArticleRequestIsComplete()
 {
-    return !isNullOrEmptyString($_POST['article_title']) && !isNullOrEmptyString($_POST['article_content']) && !isNullOrEmptyString($_POST['article_published']);
+    return !isNullOrEmptyString($_POST['article_title']) && !isNullOrEmptyString($_POST['article_content']);
 }
 
 function isNullOrEmptyString($question)
@@ -41,7 +41,11 @@ function addArticle(mysqli $mysql_connection)
     $article_author_id = $_SESSION['logged_id'];
     $article_title = $_POST['article_title'];
     $article_content = $_POST['article_content'];
-    $article_published = $_POST['article_published']=='on' ? 1 : 0;
+    if (!isNullOrEmptyString($_POST['article_published'])) {
+        $article_published = $_POST['article_published'] == 'on' ? 1 : 0;
+    } else {
+        $article_published = 0;
+    }
 
     $mysql_connection->
     query("INSERT INTO articles(author_id, title, content, published) VALUES ('$article_author_id','$article_title', '$article_content ', '$article_published')");
