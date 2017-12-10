@@ -7,7 +7,7 @@
           content="decily, decide, easily, outfit, fashion, brand, new, look, stylization, moda, ciuchy, stylizacja, łatwiej, decyzja">
     <meta name="author" content="Mateusz Nowak">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decily - Registration result</title>
+    <title>Decily - User data update result</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"/>
@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-image">
                     <img src="images/DecilyCardViewLogo.png" width="50%" height="50%">
-                    <span class="card-title">Registration</span>
+                    <span class="card-title">User Data</span>
                 </div>
                 <div class="card-content">
                     <?php

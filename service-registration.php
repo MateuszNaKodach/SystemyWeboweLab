@@ -5,7 +5,7 @@
  * Date: 22.11.2017
  * Time: 00:51
  */
-
+session_start();
 require_once "db-connection.php";
 
 define('ERROR_USERNAME_OR_EMAIL_IS_OCCUPIED', 'ERROR_USERNAME_OR_EMAIL_IS_OCCUPIED');
@@ -16,7 +16,7 @@ define('SUCCESS_USER_REGISTERED', 'SUCCESS_USER_REGISTERED');
 if (checkIfRegistrationRequestIsComplete()) {
     $registration_result = registerUser($mysql_connection);
     if ($registration_result == constant('SUCCESS_USER_REGISTERED')) {
-        echo "<p>Registration successful! If you want to log in go to our fashion blog.</p>";
+        echo "<p>Success! Go to our fashion blog.</p>";
     } else if ($registration_result == constant('ERROR_PASSWORDS_INCORRECT')) {
         echo "
         <p>Registration error! Given passwords are not identical!</p>
@@ -51,9 +51,14 @@ function registerUser(mysqli $mysql_connection)
 
             $hashed_password = calculateMd5Hash($password);
 
-            $mysql_connection->
-            query("INSERT INTO users (username, email, password, default_cloth_type) VALUES('$username','$email','$hashed_password','$cloth_type')");
-
+            if(isset($_SESSION['logged_username'])) {
+                $logged_username = $_SESSION['logged_username'];
+                $mysql_connection->
+                query("UPDATE users SET username = '$username', email = '$email', password = '$hashed_password', default_cloth_type = '$cloth_type' WHERE username = '$logged_username'");
+            }else{
+                $mysql_connection->
+                query("INSERT INTO users (username, email, password, default_cloth_type) VALUES('$username','$email','$hashed_password','$cloth_type')");
+            }
             return constant('SUCCESS_USER_REGISTERED');
         } else {
             return constant('ERROR_USERNAME_OR_EMAIL_IS_OCCUPIED');;
@@ -64,6 +69,12 @@ function registerUser(mysqli $mysql_connection)
 
 function checkIfEmailIsOccupied(mysqli $mysql_connection, $email_address)
 {
+    if(isset($_SESSION['logged_id'])){
+        $logged_id = $_SESSION['logged_id'];
+        if ($user_by_query = @$mysql_connection->query("SELECT * FROM users WHERE  email='$email_address' AND id <> $logged_id")) {
+            return @$user_by_query->num_rows > 0;
+        }
+    }
     if ($user_by_query = @$mysql_connection->query("SELECT * FROM users WHERE email='$email_address'")) {
         return @$user_by_query->num_rows > 0;
     }
@@ -72,6 +83,12 @@ function checkIfEmailIsOccupied(mysqli $mysql_connection, $email_address)
 
 function checkIfUsernameIsOccupied(mysqli $mysql_connection, $username)
 {
+    if(isset($_SESSION['logged_id'])){
+        $logged_id = $_SESSION['logged_id'];
+        if ($user_by_query = @$mysql_connection->query("SELECT * FROM users WHERE username = '$username' AND id <> $logged_id")) {
+            return @$user_by_query->num_rows > 0;
+        }
+    }
     if ($user_by_query = @$mysql_connection->query("SELECT * FROM users WHERE username = '$username'")) {
         return @$user_by_query->num_rows > 0;
     }

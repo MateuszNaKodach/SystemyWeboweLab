@@ -48,11 +48,10 @@
 </nav>
 
 
-
 <?php
-if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
+if (isset($_COOKIE['style-color']) && $_COOKIE['style-color'] == 'blue') {
     echo "<div style='background-color: blue'>";
-} else{
+} else {
     echo "<div style='background-color: red'>";
 }
 ?>
@@ -72,8 +71,11 @@ if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
             "<div class=\"card-action\">
                 <form action='logout.php' id='logout-form'>
                  <button class=\"waves-effect waves-light btn\" type=\"submit\" form='logout-form'>Log out</button>
-</form>
-                  
+                </form>
+                <br>
+   <div class=\"col s12 center-align\">
+                        <a class=\"modal-trigger\" href=\"#registration-modal\">Change user data!</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,11 +114,73 @@ if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
             </div>
         </div>
     </div>
-    
+    ";
+    }
+    ?>
+
+    <?php
+    if (isset($_SESSION['logged_username'])){
+        $username = $_SESSION['logged_username'];
+        $email = $_SESSION['logged_email'];
+        $password = $_SESSION['logged_password'];
+        echo "
         <div id=\"registration-modal\" class=\"modal\">
         <form action=\"view-registration.php\" method=\"post\">
             <div class=\"modal-content\">
-                <h4>Decily Registration</h4>
+                <h4>Decily User Data</h4>
+                <div class=\"registration-form-content\">
+                    <p>It's nice to meet you! Please introduce yourself better.</p>
+                    <div class=\"row\">
+                        <div class=\"input-field col s5 left-align\">
+                            <input id=\"registration_username\" type=\"text\" name=\"username\" maxlength=\"24\" required value=\"$username\">
+                            <label for=\"registration_username\">Username</label>
+                        </div>
+                        <div class=\"input-field col s5 right-align\">
+                            <input id=\"registration_email\" type=\"email\" class=\"validate\" name=\"email\"
+                                   maxlength=\"255\"
+                                   required value=\"$email\">
+                            <label for=\"registration_email\">E-mail address</label>
+                        </div>
+                    </div>
+                    <div class=\"row\">
+                        <div class=\"input-field col s5 left-align\">
+                            <input id=\"registration_password\" type=\"password\" name=\"password\" required>
+                            <label for=\"registration_password\">Password</label>
+                        </div>
+                        <div class=\"input-field col s5 right-align\">
+                            <input id=\"registration_repeat_password\" type=\"password\" name=\"password-repeated\" required>
+                            <label for=\"registration_repeat_password\">Repeat password</label>
+                        </div>
+                    </div>
+                    <div class=\"row\">
+                        <div class=\"input-field col s6\">
+                            <select id=\"registration_cloth_type\" name=\"cloth-type\">
+                                <option value=\"MALE\" selected>MALE</option>
+                                <option value=\"FEMALE\">FEMALE</option>
+                                <option value=\"UNISEX\">UNISEX</option>
+                            </select>
+                            <label for=\"registration_cloth_type\">Which kind of clothes do you often wear?</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class=\"modal-footer\">
+                <input id=\"registration_confirm\" type=\"submit\"
+                       class=\"modal-action waves-effect waves-green btn-flat\"
+                       value=\"SUBMIT\">
+                <a class=\"modal-action modal-close waves-effect waves-green btn-flat\">CANCEL</a>
+            </div>
+
+        </form>
+    </div>
+        ";
+    }else {
+        echo "
+        <div id=\"registration-modal\" class=\"modal\">
+        <form action=\"view-registration.php\" method=\"post\">
+            <div class=\"modal-content\">
+                <h4>Decily User Data</h4>
                 <div class=\"registration-form-content\">
                     <p>It's nice to meet you! Please introduce yourself better.</p>
                     <div class=\"row\">
@@ -157,17 +221,19 @@ if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
             <div class=\"modal-footer\">
                 <input id=\"registration_confirm\" type=\"submit\"
                        class=\"modal-action waves-effect waves-green btn-flat\"
-                       value=\"REGISTER\">
+                       value=\"SUBMIT\">
                 <a class=\"modal-action modal-close waves-effect waves-green btn-flat\">CANCEL</a>
             </div>
 
         </form>
-    </div>";
+    </div>
+        ";
     }
     ?>
 
+
     <?php
-        require_once 'service-readallarticles.php'
+    require_once 'service-readallarticles.php'
     ?>
 
     <div class="row">
@@ -328,13 +394,17 @@ if(isset($_COOKIE['style-color']) && $_COOKIE['style-color']=='blue') {
         </details>
 
         <div>
-                <form action='service-cookiestyle.php' method="post" id='blue-style-form'>
-                    <input hidden name="style" type="text" value="blue" required>
-                        <button class="waves-effect waves-light btn" style="background-color: blue" type="submit" form='blue-style-form'>BLUE BLOG STYLE</button>
-                </form>
+            <form action='service-cookiestyle.php' method="post" id='blue-style-form'>
+                <input hidden name="style" type="text" value="blue" required>
+                <button class="waves-effect waves-light btn" style="background-color: blue" type="submit"
+                        form='blue-style-form'>BLUE BLOG STYLE
+                </button>
+            </form>
             <form action='service-cookiestyle.php' method="post" id='red-style-form'>
                 <input hidden name="style" type="text" value="red" required>
-                <button class="waves-effect waves-light btn" style="background-color: red" type="submit" form='red-style-form'>RED BLOG STYLE</button>
+                <button class="waves-effect waves-light btn" style="background-color: red" type="submit"
+                        form='red-style-form'>RED BLOG STYLE
+                </button>
             </form>
         </div>
     </footer>
